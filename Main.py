@@ -1,5 +1,6 @@
 from random import randint
 
+
 class GameEngine:
     def __init__(self) -> None:
         self.BoardWidth, self.BoardHeight = 5, 5
@@ -19,4 +20,3 @@ class GameEngine:
 if __name__ == "__main__":
     MyGame = GameEngine()
     MyGame.Run()
-
