@@ -20,7 +20,7 @@ class GameEngine:
         """Main Game Loop"""
         for row in self.GameBoard:
             print(row)
-        # print(' # ' * 5) Throws error
+        print(' # ' * self.BoardWidth)
         self.FindTriples()
         for row in self.GameBoard:
             print(row)
@@ -31,15 +31,13 @@ class GameEngine:
             for j, jewel in enumerate(row):
                 if 0 < i < (self.BoardWidth - 1):
                     if (jewel == self.GameBoard[i - 1][j]) and (
-                        jewel == self.GameBoard[i + 1][j]
-                    ):
+                        jewel == self.GameBoard[i + 1][j]):
                         self.GameBoard[i][j] = 0
                         self.GameBoard[i - 1][j] = 0
                         self.GameBoard[i + 1][j] = 0
-                if 0 < i < (self.BoardHeight - 1):
+                if 0 < j < (self.BoardHeight - 1):
                     if (jewel == self.GameBoard[i][j - 1]) and (
-                        jewel == self.GameBoard[i][j + 1]
-                    ):
+                        jewel == self.GameBoard[i][j + 1]):
                         self.GameBoard[i][j] = 0
                         self.GameBoard[i][j - 1] = 0
                         self.GameBoard[i][j + 1] = 0
